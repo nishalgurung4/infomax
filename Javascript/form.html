@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Form</title>
+	<style type="text/css">
+		#email-error, #password-error {
+			display: none;
+			color: red;
+		}
+
+	</style>
+</head>
+<body>
+<form action="action.html" id="login-form">
+	<label for="email">Email</label>
+	<input id="email" type="email" />
+	<p id="email-error"></p>
+	<br />
+	<label for="password"> Password </label>
+	<input type="password" type="password" id="password">
+	<p id="password-error"> </p>
+	<br />
+	<input type="submit">
+</form>
+
+<a href="https://google.com" target="_blank" onclick="event.preventDefault()">Google</a>
+
+<script type="text/javascript">
+	const form = document.getElementById('login-form');
+
+	form.addEventListener('submit', function (event) {
+		event.preventDefault();
+		const emailEl = document.querySelector("#email");
+		const passwordEl = document.querySelector("#password");
+		const emailErrorEl = document.querySelector("#email-error");
+		const passwordErrorEl = document.querySelector("#password-error");
+
+		if (emailEl.value != "" && passwordEl.value != "") {
+			form.submit();
+		}
+
+		emailErrorEl.style.display="block";
+		emailErrorEl.textContent = "Email is required";
+
+		passwordErrorEl.style.display="block";
+		passwordErrorEl.textContent = "Password is required";
+
+		
+	})
+</script>
+</body>
+</html>

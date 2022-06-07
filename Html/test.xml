@@ -1,0 +1,7 @@
+<?xml-stylesheet type='text/xsl' href='test.xsl'?>
+<class>
+	<student>
+		<name>Nishal</name>
+		<roll>1</roll>
+	</student>
+</class>

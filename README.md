@@ -1,3 +1,0 @@
-### Heading
-
-## Second heading

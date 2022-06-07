@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/3828898/can-chrome-be-made-to-perform-an-xsl-transform-on-a-local-file#:~:text=The%20short%20answer%20is%20%22No,while%20HTML%20files%20can%20access%20.
