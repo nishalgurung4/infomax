@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Append</title>
+	<style type="text/css">
+		.box {
+			background-color: red;
+			width: 50px;
+			height: 50px;
+			margin: 10px;
+			text-align: center;
+		}
+		.container {
+			display: flex;
+			border:  1px solid black;
+		}
+	</style>
+</head>
+<body>
+<button id="prepend-btn">Prepend</button>
+<button id="append-btn">Append</button>
+<button id="after-btn">After</button>
+<button id="before-tbn">Before</button>
+<div class="container"></div>
+
+<script type="text/javascript" src="./asset/jquery3.6.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		let count = 1;
+		$("#append-btn").click(function () {
+
+			$(".container").append("<div class='box'>"+ count +"</div>");
+			count++;
+		});
+
+		$("#prepend-btn").click(function () {
+			$(".container").prepend("<div class='box'>"+ count +"</div>");
+			count++;
+		});
+
+		$("#after-btn").click(function () {
+			$(".container").after("<div class='box'>"+ count +"</div>");
+			count++;
+		});
+	});
+</script>
+</body>
+</html>

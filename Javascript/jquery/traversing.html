@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Traversing</title>
+	<style type="text/css">
+		body, div, ul, li{
+			border: 1px solid red;
+			padding: 2rem;
+
+		}
+
+		li {
+			list-style: none;		
+		}
+
+	</style>
+</head>
+<body>body
+	<div> first div
+		<ul>ul
+			<li>
+				First li
+			</li>
+			<li>
+				Second li
+			</li>
+			<li>
+				Third li
+			</li>
+		</ul>
+
+		<div>
+			Second div
+		</div>
+	</div>
+
+	<div>third div</div>
+<script type="text/javascript" src="./asset/jquery3.6.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		// $("ul").parent().css("border", "4px solid green");
+		// $("ul").parents().css("border", "4px solid green");
+		// $("li").parentsUntil('div').css("border", "4px solid green");
+		// 
+		//Descendants
+		
+		// $("ul").children().css("border", "2px solid green");
+		// 
+		// $("div").find("div").css("border", "2px solid yellow");
+
+		$("div").siblings().css("border", "2px solid green");
+
+	})
+</script>
+</body>
+</html>
