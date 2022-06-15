@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Todo</title>
+</head>
+<body>
+<input type="text" id="input-todo">
+<div id="result"></div>
+
+<script type="text/javascript">
+	/**
+	class Task 
+	{
+		name;
+		isComplete;
+		constructor(name) {
+			this.name = name;
+			this.isComplete = false;
+		}
+		marksAsComplete() {
+			this.isComplete = true;
+		}
+		markAsInComplete() {
+			this.isComplete = false;
+		}
+	}
+
+	function addTask(name)
+	{
+		tasks.push({
+			name: name,
+			isComplete: false,
+			marksAsComplete: () => this.isComplete = true,
+			marksAsInComplete: () => this.isComplete = false
+		});
+	}
+**/
+	
+
+	let tasks = [];
+	const inputEl = document.getElementById("input-todo");
+	const resultEl = document.getElementById("result");
+	function Task(name)
+	{
+		this.name = name;
+		this.isComplete = false;
+		this.marksAsComplete = () => this.isComplete = true;
+		this.marksAsInComplete = () => this.isComplete = false;
+		this.toggleComplete = () => this.isComplete = !this.isComplete;
+	}
+
+	function addTask(name)
+	{
+		tasks.push(new Task(name));
+		renderDOM();
+	}
+
+	function markAsAllComplete()
+	{
+
+		tasks.forEach((task) => task.isComplete = true);
+	}
+
+	function markAsAllInComplete()
+	{
+		tasks.forEach((task) => task.isComplete = false);
+	}
+
+	function resetInput()
+	{
+		inputEl.value = "";
+	}
+
+
+	inputEl.addEventListener("keyup", function(event) {
+		if (event.key == "Enter") {
+			addTask(inputEl.value);
+			resetInput();
+		}
+	})
+
+
+	function renderDOM()
+	{
+		resultEl.innerHTML = "";
+		tasks.forEach(function (task) {
+			resultEl.innerHTML += `<p>${task.name}</p>`;
+		});
+	}
+
+</script>
+</body>
+</html>
